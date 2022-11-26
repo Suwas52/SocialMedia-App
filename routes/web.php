@@ -15,10 +15,10 @@ use App\http\Controllers\UserController;
 |
 */
 
-Route::get('/', [HomeController::class, 'layoutApp'])->name('layoutApp')->middleware(['auth']);
+Route::get('/', [HomeController::class, 'layoutApp'])->name('layoutApp');
 Route::get('/register', [HomeController::class, 'register'])->name('register');
 Route::post('/register', [UserController::class, 'registerUser'])->name('registerUser');
-Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
+Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard')->middleware(['auth']);
 Route::get('/login', [HomeController::class, 'login'])->name('login');
 Route::post('/login', [UserController::class, 'loginUser'])->name('loginUser');
 Route::get('/logout', [UserController::class, 'logout'])->name('logout');
