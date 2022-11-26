@@ -32,10 +32,22 @@
                             <!-- @if (Session::has('success'))
                             <p class="success">{{Session::get('success')}}</p>
                             @endif -->
-                            <input type="email" name="email" id="" class="form-control my-4 py-2 fs-4"
+                            <input type="email" name="email"
+                                class="form-control my-4 py-2 fs-4 @error('email') is-invalid @enderror"
                                 placeholder="Email">
-                            <input type="password" name="password" id="" class="form-control my-4 py-2 fs-4"
+                            @error('email')
+                            <div class="invalid-feedback">
+                                {{$message}}
+                            </div>
+                            @enderror
+                            <input type="password" name="password" id=""
+                                class="form-control my-4 py-2 fs-4 @error('password') is-invalid @enderror"
                                 placeholder="Password">
+                            @error('password')
+                            <div class="invalid-feedback">
+                                {{$message}}
+                            </div>
+                            @enderror
                             <div class="text-center mt-3">
                                 <button class="btn btn-primary py-2 col-md-12 fs-5">Log In</button>
                                 <a href="#" class="nav-link mt-1 ">Forget Password? </a>
