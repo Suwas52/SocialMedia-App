@@ -50,7 +50,7 @@
                             @enderror
                             <div class="text-center mt-3">
                                 <button class="btn btn-primary py-2 col-md-12 fs-5">Log In</button>
-                                <a href="#" class="nav-link mt-1 ">Forget Password? </a>
+                                <a href="#" class="nav-link mt-1 ">Forget Passwords? </a>
                                 <a href="/register" class="btn btn-success py-2 col-md-12 fs-5">Sign Up</a>
                             </div>
                         </form>
